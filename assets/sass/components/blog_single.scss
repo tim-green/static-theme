@@ -1,0 +1,75 @@
+/*--------------------------------------------------------------
+# blog-single
+--------------------------------------------------------------*/
+.blog-single-page {
+	&.site-single-post {
+		padding: 0 !important;
+	}
+	.post {
+		margin-bottom: 45px;
+	}
+	.entry-meta {
+		padding: 30px 30px 0;
+		margin-bottom: -10px;
+		li {
+			display: inline-block;
+			padding: 0 15px;
+			i {
+				color: #8d8d8d;
+				margin-right: 5px;
+			}
+		}
+		.entry-category a {
+			margin-right: 5px;
+			&:after {
+				content: ",";
+			}
+			&:last-child:after {
+				content: " ";
+			}
+		}
+	}
+	.entry-meta:first-child {
+		padding-top: 55px;
+	}
+	.entry-content {
+		padding: 30px 45px 45px;
+		.entry-title {
+			font-size: 30px;
+			margin-bottom: 30px;
+		}
+		ul, ol {
+			li {
+				margin-top: 10px;
+				line-height: 1.6em;
+			}
+		}
+		> ul,
+		> ol {
+			padding-left: 20px;
+		}
+		a {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		table {
+			margin-bottom: 30px;
+		}
+		.wp-block-gallery {
+			padding: 0;
+		}
+		.wp-block-pullquote {
+			blockquote {
+				border-left: 0 none;
+				padding: 0;
+				margin-bottom: 0;
+			}
+			p {
+				margin-bottom: 15px;
+			}
+		}
+	}
+}
+
+.blog-page-block {
