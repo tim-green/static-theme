@@ -1,3 +1,9 @@
+<?php 
+
+/**
+ * Template functions part going here
+ * @package static
+ */
 if ( ! function_exists( 'static_preloader' ) ) :
     function static_preloader() {  
         if( static_get_options('preloader') ) { ?>
@@ -24,6 +30,29 @@ endif;
 if ( ! function_exists( 'static_get_options' ) ) :
     function static_get_options() {
         $result = get_theme_mod('static_options');
+        foreach (func_get_args() as $arg) {
+            if(is_array($arg)) {
+                if (!empty($result[$arg[0]])) {
+                    $result = $result[$arg[0]];
+                } else {  
+                  $result = $arg[1];
+                }
+            } else {
+                if (!empty($result[$arg])) {
+                    $result = $result[$arg];
+                } else { 
+                    $result = null;
+                }
+            }
+        }
+        return $result;
+    }
+endif;
+
+/* static post and page meta */
+if ( ! function_exists( 'static_post_page_meta' ) ) :
+    function static_post_page_meta() {
+        $result = get_post_meta( get_the_ID(), 'static_options', true); 
         foreach (func_get_args() as $arg) {
             if(is_array($arg)) {
                 if (!empty($result[$arg[0]])) {
