@@ -1,0 +1,30 @@
+{
+  "name": "static",
+  "version": "1.0.0",
+  "description": "Static is a WordPress theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tim-green/static-theme.git"
+  },
+  "author": "Tim Green",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tim-green/static-theme/issues"
+  },
+  "homepage": "https://github.com/tim-green/static-theme#readme",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "grunt": "^1.0.4",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-watch": "^1.1.0",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.1"
+  }
+}
