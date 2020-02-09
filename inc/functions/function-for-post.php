@@ -44,3 +44,38 @@ function static_post_featured_image($width = 900, $height = 600, $crop = false, 
     }
 }
 endif;
+
+/**
+ *  static Get Image Crop Size By Image ID
+ *
+ * @package static
+ * @since 1.0
+ */
+if ( ! function_exists( 'static_get_image_crop_size' ) ) :
+function static_get_image_crop_size($img_id = false, $width = null, $height = null, $crop = false, $mobile = true) {
+    $url = wp_get_attachment_url( $img_id ,'full' );
+    if ( wp_is_mobile() && $mobile = true ) {
+        if( function_exists(' static_aq_resize ') ) {
+            $crop_image = static_aq_resize( $url, 409, 275, false ); 
+        } else {
+            $crop_image = wp_get_attachment_image_src( $img_id, array(409, 278 ), false )[0];
+        }
+        if( $crop_image == false ) {
+            return $url;
+        } else { 
+            return $crop_image;
+        }
+    } else {
+        if( function_exists(' static_aq_resize ') ) {
+            $crop_image = static_aq_resize( $url, $width, $height, $crop ); 
+        } else {
+            $crop_image = wp_get_attachment_image_src( $img_id, array($width, $crop ), false )[0];
+        }
+        if( $crop_image == false ) {
+            return $url;
+        } else { 
+            return $crop_image;
+        }
+    }
+}
+endif;
