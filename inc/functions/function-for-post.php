@@ -148,3 +148,24 @@ if(! function_exists('static_return_page_title') ) :
         return get_the_title($page_ID);
     }
 endif;
+
+/**
+ *  static Generate Custom Link
+ *
+ * @package static
+ * @since 1.0
+ */
+if ( ! function_exists( 'static_theme_kc_custom_link' ) ) :
+function static_theme_kc_custom_link( $link, $default = array( 'url' => '', 'title' => '', 'target' => '' ) ) {
+    $result = $default;
+    $params_link = explode('|', $link);
+
+    if( !empty($params_link) ){
+        $result['url'] = rawurldecode(isset($params_link[0])?$params_link[0]:'#');
+        $result['title'] = isset($params_link[1])?$params_link[1]:'';
+        $result['target'] = isset($params_link[2])?$params_link[2]:'';
+    }
+
+    return $result;
+}
+endif;
