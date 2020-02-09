@@ -27,3 +27,30 @@ if ( ! function_exists( 'static_get_options' ) ) :
         return $result;
     }
 endif;
+
+/**
+ * Return padding/margin values for customizer
+ * @since static 1.0
+ * @since 1.0
+ */
+if ( ! function_exists( 'static_spacing_css' ) ) {
+
+    function static_spacing_css( $top, $right, $bottom, $left ) {
+
+        // Add px and 0 if no value
+        $s_top      = ( isset( $top ) && '' !== $top ) ? intval( $top ) . 'px ' : '0px ';
+        $s_right    = ( isset( $right ) && '' !== $right ) ? intval( $right ) . 'px ' : '0px ';
+        $s_bottom   = ( isset( $bottom ) && '' !== $bottom ) ? intval( $bottom ) . 'px ' : '0px ';
+        $s_left     = ( isset( $left ) && '' !== $left ) ? intval( $left ) . 'px' : '0px';
+        
+        // Return one value if it is the same on every inputs
+        if ( ( intval( $s_top ) === intval( $s_right ) )
+            && ( intval( $s_right ) === intval( $s_bottom ) )
+            && ( intval( $s_bottom ) === intval( $s_left ) ) ) {
+            return $s_left;
+        }
+        
+        // Return
+        return $s_top . $s_right . $s_bottom . $s_left;
+    }
+}
