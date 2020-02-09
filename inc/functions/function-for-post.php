@@ -135,3 +135,16 @@ if ( ! function_exists( 'static_get_image_crop_size_by_url' ) ) :
         }
     }
 endif;
+
+/**
+ *  static Return Page Title
+ *
+ * @package static
+ * @since 1.0
+ */
+if(! function_exists('static_return_page_title') ) :
+    function static_return_page_title() {
+        $page_ID = get_queried_object_id();
+        return get_the_title($page_ID);
+    }
+endif;
