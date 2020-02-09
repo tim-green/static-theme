@@ -1,0 +1,90 @@
+/*!
+
+  This is the core import file. Section your Sass stylesheets according to the below structure for a nice flow.
+
+*/
+
+/*
+
+ ==== modules ====
+
+*/
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "modules/variables";
+@import "modules/mixins";
+@import "modules/alignments";
+@import "modules/clearings";
+@import "modules/infinite-scroll";
+@import "modules/typography";
+@import "modules/accessibility";
+
+/*
+
+ ==== Plugins ====
+
+*/
+
+
+
+/*
+
+ ==== Components ====
+
+*/
+
+@important "components/blog_single";
+@important "components/buttons";
+@important "components/captions";
+@important "components/components";
+@important "components/elements";
+@important "components/fields";
+@important "components/galleries";
+@important "components/links";
+@important "components/lists";
+@important "components/media";
+@important "components/menus";
+@important "components/navigation";
+@important "components/navigation_responsive";
+@important "components/others";
+@important "components/pagination";
+@important "components/tables";
+
+
+/*
+
+ ==== Sections ====
+
+*/
+
+@import "sections/header";
+@import "sections/main";
+@import "sections/footer";
+
+
+/*
+
+ ==== Pages ====
+
+*/
+
+
+@import "pages/404";
+@import "pages/about";
+@import "pages/aboutus";
+@import "pages/area-of-work";
+@import "pages/asides";
+@import "pages/bbpress";
+@import "pages/blog";
+@import "pages/buddypress";
+@import "pages/comments";
+@import "pages/contact";
+@import "pages/pages";
+@import "pages/portfolio";
+@import "pages/posts-and-pages";
+@import "pages/resume";
+@import "pages/slider";
+@import "pages/tab-style";
+@import "pages/testimonial";
+@import "pages/widgets";
+@import "pages/widgets_content";
+@import "pages/woocommerce";
