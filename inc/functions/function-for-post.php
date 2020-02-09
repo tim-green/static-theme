@@ -115,3 +115,23 @@ function static_get_image_crop_size_by_id($post_id = false, $width = null, $heig
 }
 endif;
 
+/**
+ *  static Get Image By URL
+ *
+ * @package static
+ * @since 1.0
+ */
+if ( ! function_exists( 'static_get_image_crop_size_by_url' ) ) :
+    function static_get_image_crop_size_by_url($url = false, $width = null, $height = null, $crop = false) {
+        if( function_exists('static_aq_resize') ) {
+            $crop_image = static_aq_resize( $url, $width, $height, $crop ); 
+        } else {
+            $crop_image = $url;
+        }
+        if( $crop_image == false ) {
+            return $url;
+        } else { 
+            return $crop_image;
+        }
+    }
+endif;
